@@ -51,3 +51,8 @@ require("lazy").setup({
     },
   },
 })
+
+require("compile").setup()
+-- require("toggleterm").setup({
+--   persist_size = false
+-- })

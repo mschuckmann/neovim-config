@@ -1,0 +1,9 @@
+-- Example: Enable auto-session in your LazyVim config
+return {
+  "rmagatti/auto-session",
+  config = function()
+    require("auto-session").setup({
+      auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+    })
+  end,
+}
