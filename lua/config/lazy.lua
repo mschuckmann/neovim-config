@@ -53,6 +53,8 @@ require("lazy").setup({
 })
 
 require("compile").setup()
+require('guess-indent').setup {}
+
 -- require("toggleterm").setup({
 --   persist_size = false
 -- })

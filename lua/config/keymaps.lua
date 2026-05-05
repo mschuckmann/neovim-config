@@ -26,7 +26,7 @@ vim.keymap.set("n", "<kPlus>", 'yy', opts)
 vim.keymap.set("i", "<kPlus>", '<C-o>yy', opts)
 
 vim.keymap.set("n", "<kMinus>", 'dd', opts)
-vim.keymap.set("i", "<kMinus>", '<C-o>dd', opts)
+vim.keymap.set("i", "<kMinus>", '<C-o >dd', opts)
 
 -- Search for selected text in visual mode
 vim.keymap.set("v", "//", [[y/\V<C-R>=escape(@", '/\')<CR><CR>]], { desc = "Search for selection" })
@@ -35,3 +35,7 @@ vim.keymap.set("v", "//", [[y/\V<C-R>=escape(@", '/\')<CR><CR>]], { desc = "Sear
 vim.keymap.set("x", "*", [[y/\V<C-R>=escape(@", '/\')<CR><CR>]])
 vim.keymap.set("x", "#", [[y?\V<C-R>=escape(@", '?\')<CR><CR>]])
 
+vim.keymap.set("n", "<leader>dv", function()
+  local config = vim.diagnostic.config()
+  vim.diagnostic.config({ virtual_text = not config.virtual_text })
+end, { desc = "Toggle diagnostics virtual text" })

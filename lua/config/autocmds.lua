@@ -26,3 +26,10 @@ vim.api.nvim_create_autocmd("BufEnter", {
   pattern = "term://*",
   command = "startinsert"
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "neotree", "aerial", "grug-far" }, -- Add filetypes to disable here
+  callback = function(args)
+    vim.b[args.buf].edgy_disable = true
+  end,
+})
